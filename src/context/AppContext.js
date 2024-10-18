@@ -1,4 +1,5 @@
 import { createContext } from "react"
+// THIS COMPONENT WAS ONLY USED FOR TESTING BEFORE I HIT THE API ENDPOINTS
 
 // Dummy data
 const countryData = {

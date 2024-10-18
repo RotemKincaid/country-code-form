@@ -109,6 +109,7 @@ function App() {
 
   // handle phone mask based on length
   const getPhoneMask = (length: number) => {
+    // must be a number
     const parsedLength = Number(length)
     
     if (parsedLength === 10) return '(999) 999-9999'
@@ -118,7 +119,9 @@ function App() {
     else return '(999) 999-9999'
   }
 
+  // handle phone placeholder based on length
   const getPhonePlaceholder = (length: number) => {
+    // must be a number
     const parsedLength = Number(length)
 
     if (parsedLength === 10) return '(000) 000-0000'
@@ -140,6 +143,7 @@ function App() {
     }
   }, [selectedCountry])
 
+  // fetch the countries once
   useEffect(() => {
     fetchCountries()
   },[])
@@ -148,8 +152,10 @@ function App() {
     <div className="bg-violet-400 w-[100vw] h-[100vh]">
       <form onSubmit={(e) => handleSubmit(e)} className="min-h-[80vh] flex items-center">
         <div className="relative flex flex-col items-center gap-3 m-auto p-8 min-w-[340px] sm:min-w-96 border bg-slate-400 rounded-xl text-zinc-600 text-sm shadow-lg">
-        {loading && <div className="absolute top-0 left-0 right-0 text-white text-center">Loading...</div>} {/* Loading indicator */}
 
+        {loading && <div className="absolute top-0 left-0 right-0 text-white text-center">Loading...</div>} 
+
+        {/* top flag-country code button and phone input */}
           <div className="flex justify-between w-[275px]">
             <button onClick={(e) => toggleList(e)} type="button" className="w-18 h-8 rounded-md bg-white px-1">
               <div className="flex items-center justify-around">

@@ -43,7 +43,6 @@ apiClient.interceptors.request.use(
                 try {
                     token = await getAuthToken() // Get a new token
                 } catch (error) {
-                    // Handle the error appropriately
                     console.error('Failed to fetch token:', error)
                     return Promise.reject(error) // Reject the request
                 } finally {
